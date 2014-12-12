@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>T2 WEB DEV</title>>
+        <link href="./index.css" rel="stylesheet" type="text/css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>
+        <script src="http://code.highcharts.com/highcharts.js"/>
+        <script src="http://code.highcharts.com/modules/exporting.js"/>
+        <script src="list.js"/>
+    </h:head>
+    <h:body>
+        <div id="header"></div>
+        <div id="menu-left">
+
+            <h:form>
+                <p:growl id="msgs" showDetail="true" />
+                <p:panel header="Selecione um circuito" style="margin-bottom:10px;">
+                    <p:outputLabel value="Circuito: " />
+                    <p:selectOneMenu id="circuit" value="#{circuitos.circuito}" style="width:300px">
+                        <f:selectItem itemLabel="Selecione o circuito" itemValue="" noSelectionOption="true" />
+                        <f:selectItems value="#{circuitos.circuitos}" />
+                    </p:selectOneMenu>
+
+                    <p:commandButton value="Submit" actionListener="#{circuitos.pegaDados}" icon="ui-icon-check" />
+                </p:panel>
+            </h:form>
+
+        </div>
+
+        <div id="main">
+            <div id="container" style="margin-top:50px;width:70%; height:400px;"></div>
+        </div>
+        <div id="footer"></div>
+    </h:body>
+</html>
