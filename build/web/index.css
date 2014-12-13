@@ -22,6 +22,7 @@ and open the template in the editor.
 #menu-left{
     height: 75%;
     width: 20%;
+    min-width: 360px;
     background-color: #CFCFCF;
     top:15%;
     left:0px;

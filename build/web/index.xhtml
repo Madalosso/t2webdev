@@ -7,10 +7,12 @@
     <h:head>
         <title>T2 WEB DEV</title>>
         <link href="./index.css" rel="stylesheet" type="text/css"/>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>
-        <script src="http://code.highcharts.com/highcharts.js"/>
-        <script src="http://code.highcharts.com/modules/exporting.js"/>
-        <script src="list.js"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+
     </h:head>
     <h:body>
         <div id="header"></div>
@@ -28,11 +30,23 @@
                     <p:commandButton value="Submit" actionListener="#{circuitos.pegaDados}" icon="ui-icon-check" />
                 </p:panel>
             </h:form>
-
+            <h:form>
+                <p:panel header="Adicionar um Tempo" style="margin-bottom:10px;">
+                    <h:panelGrid columns="2" cellpadding="3">
+                        <p:outputLabel value="Nome: " />
+                        <p:inputText id="novocircuito" value="#{circuitos.novoCircuito}"/>
+                        <p:outputLabel value="Tempo:" />
+                        <p:inputText id="novotempo" value="#{circuitos.novoTempo}"/>
+                        <p:outputLabel value="Ano:" />
+                        <p:inputText id="novoano" value="#{circuitos.novoAno}"/>
+                        <p:commandButton value="Submit" actionListener="#{circuitos.addTempo}"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
         </div>
 
         <div id="main">
-            <div id="container" style="margin-top:50px;width:70%; height:400px;"></div>
+            
         </div>
         <div id="footer"></div>
     </h:body>
