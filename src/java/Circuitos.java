@@ -74,12 +74,17 @@ public class Circuitos implements Serializable {
             conexao = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/t2webdev", "root", "");
             stmt = (PreparedStatement) conexao.prepareStatement(s);
             rs = stmt.executeQuery();
+            ArrayList<String> anos = new ArrayList<>();
             while (rs.next()) {
                 String tempo = rs.getString("tempo");
                 String ano = rs.getString("ano");
                 System.out.println("Tempo: " + tempo);
                 System.out.println("Ano: " + ano);
+                if(anos.contains(ano)){
+                    continue;
+                }
                 listaTempos.add(new chartData(ano, tempo));
+                anos.add(ano);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Circuitos.class.getName()).log(Level.SEVERE, null, ex);
